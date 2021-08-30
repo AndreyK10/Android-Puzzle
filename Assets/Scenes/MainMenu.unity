@@ -983,23 +983,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &444367690 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3713810435681869346, guid: fe6135264f83f77469715bdfeab35f06, type: 3}
-  m_PrefabInstance: {fileID: 3713810436110966120}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &444367694
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444367690}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
 --- !u!1 &487257780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,6 +1341,7 @@ GameObject:
   - component: {fileID: 700344525}
   - component: {fileID: 700344524}
   - component: {fileID: 700344523}
+  - component: {fileID: 700344526}
   m_Layer: 5
   m_Name: MusicButton
   m_TagString: Untagged
@@ -1427,7 +1411,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 700344524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1111785991}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: MuteMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &700344524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1466,6 +1462,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700344521}
   m_CullTransparentMesh: 1
+--- !u!114 &700344526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700344521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d92fee572a0a114eb27ab227ee0e251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 700344523}
+  on: {fileID: 21300000, guid: 2dcc619a49088ab4599cc7e3b756a1ed, type: 3}
+  off: {fileID: 21300000, guid: 11e3d102a51b3e1409ff67d202690d8b, type: 3}
 --- !u!1 &733655109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1677,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 868283598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1111785989}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: Level4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &868283598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2303,6 +2326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1111785990}
   - component: {fileID: 1111785989}
+  - component: {fileID: 1111785991}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: Untagged
@@ -2337,6 +2361,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111785991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111785988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5125d20c50f862447bfbcf32dff08ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1429515847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,7 +2456,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1429515850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1111785989}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: Level3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1429515850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2556,7 +2604,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451509768}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1111785989}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: Level6
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1451509768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3208,7 +3268,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1893239349}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1111785989}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: Level5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1893239349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3735,6 +3807,57 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &2093845427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093845429}
+  - component: {fileID: 2093845428}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2093845428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093845427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcae02997b5435049bbf677c44e8cdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BGMusic
+    clip: {fileID: 8300000, guid: 7d0857f75a79b764d823961d7b94a0e5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+--- !u!4 &2093845429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093845427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3713810436110966120
 PrefabInstance:
   m_ObjectHideFlags: 0

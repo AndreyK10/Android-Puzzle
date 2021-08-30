@@ -4,7 +4,7 @@ public class PlayerMovementPC : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] private float force;
-    private bool isMoving;
+    [SerializeField] private bool isMoving;
 
     private void Awake()
     {

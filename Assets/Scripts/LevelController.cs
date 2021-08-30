@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
@@ -11,15 +12,16 @@ public class LevelController : MonoBehaviour
 
     private Transform allSquares;
     private List<SpriteRenderer> _allSquares = new List<SpriteRenderer>();
+    private int nextLevel;
 
     [SerializeField] private GameObject finishUI, pauseButton, player;
+    [SerializeField] private Button nextLevelButton;
 
     private void Awake()
     {
         instance = this;
 
         allSquares = GameObject.FindGameObjectWithTag("Map").transform;
-
 
         foreach (Transform square in allSquares)
         {
@@ -32,7 +34,8 @@ public class LevelController : MonoBehaviour
         if (_allSquares.Count == 0)
         {
             GameFinished();
-        }
+        }        
+        if (nextLevel >= SceneManager.sceneCountInBuildSettings) nextLevelButton.interactable = false;
     }
 
     public void RemoveFromList()
@@ -44,8 +47,11 @@ public class LevelController : MonoBehaviour
         finishUI.SetActive(true);
         pauseButton.SetActive(false);
         player.SetActive(false);
-        int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextLevel <= SceneManager.sceneCount) PlayerPrefs.SetInt(nextLevel.ToString(), 1);
+        nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextLevel <= SceneManager.sceneCountInBuildSettings)
+        { 
+            PlayerPrefs.SetInt(nextLevel.ToString(), 1);
+        }
     }
 
     public void LoadMenu()
@@ -62,5 +68,4 @@ public class LevelController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
 }

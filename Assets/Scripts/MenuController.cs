@@ -11,16 +11,9 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Transform levelsPanel;
     private List<Button> levelButtons = new List<Button>();
 
-    public const string LEVEL1_PREFS = "1";
-    public const string LEVEL2_PREFS = "2";
-    public const string LEVEL3_PREFS = "3";
-    public const string LEVEL4_PREFS = "4";
-    public const string LEVEL5_PREFS = "5";
-    public const string LEVEL6_PREFS = "6";
-
     private void Awake()
     {
-        PlayerPrefs.SetInt(LEVEL1_PREFS, 1);
+        PlayerPrefs.SetInt("1", 1);
         foreach (Transform s in levelsPanel)
         {
             if (s.TryGetComponent(out Button _button)) levelButtons.Add(_button);
@@ -38,7 +31,6 @@ public class MenuController : MonoBehaviour
             }
         }
     }
-
 
     private void LoadLevel(int index)
     {
