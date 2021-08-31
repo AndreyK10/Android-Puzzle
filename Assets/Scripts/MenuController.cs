@@ -60,4 +60,8 @@ public class MenuController : MonoBehaviour
     {
         LoadLevel(6);
     }
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }
